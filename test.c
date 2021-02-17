@@ -52,6 +52,30 @@ void testISFIB(void){
 
 /* Test char* fizzbuzz(int i, char* dest, size_t n); */
 void testFIZZBUZZ(void){
+  
+  fizzbuzz(3, actual, 9);
+  strncpy(expected, "FIZZ\0\0\0\0\0", 9);
+  CU_ASSERT_STRING_EQUAL(actual, expected);
+
+  fizzbuzz(5, actual, 9);
+  strncpy(expected, "BUZZ\0\0\0\0\0", 9);
+  CU_ASSERT_STRING_EQUAL(actual, expected);
+
+  fizzbuzz(15, actual, 9);
+  strncpy(expected, "FIZZBUZZ\0", 9);
+  CU_ASSERT_STRING_EQUAL(actual, expected);
+
+  fizzbuzz(16, actual, 9);
+  strncpy(expected, "16\0\0\0\0\0\0\0", 9);
+  CU_ASSERT_STRING_EQUAL(actual, expected);
+
+  fizzbuzz(-16, actual, 12);
+  strncpy(expected, "-16\0\0\0\0\0\0\0\0\0\0", 12);
+  CU_ASSERT_STRING_EQUAL(actual, expected);
+
+  fizzbuzz(0, actual, 9);
+  strncpy(expected, "FIZZBUZZ\0", 9);
+  CU_ASSERT_STRING_EQUAL(actual, expected);
 
 }
 
