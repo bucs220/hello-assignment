@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Files produced by Makefile
+_functions.c
+_functions.o
+libfunctions.a
+test
